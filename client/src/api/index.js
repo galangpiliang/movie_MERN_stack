@@ -1,15 +1,15 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "http://localhost:3000/api"
-});
+// const api = axios.create({
+//   baseURL: "http://localhost:3000/api"
+// });
 
-export const insertMovie = payload => api.post("/movie", payload);
-export const getAllMovies = () => api.get("/movies");
+export const insertMovie = payload => axios.post("/api/movie", payload);
+export const getAllMovies = () => axios.get("/api/movies");
 export const updateMovieById = (id, payload) =>
-  api.put(`/movie/${id}`, payload);
-export const deleteMovieById = id => api.delete(`/movie/${id}`);
-export const getMovieById = id => api.get(`/movie/${id}`);
+  axios.put(`/movie/${id}`, payload);
+export const deleteMovieById = id => axios.delete(`/api/movie/${id}`);
+export const getMovieById = id => axios.get(`/api/movie/${id}`);
 
 const apis = {
   insertMovie,
