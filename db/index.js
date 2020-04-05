@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect(process.env.DB_CONN_DEV, {
+  .connect(process.env.DB_CONN_DEV || "mongodb://127.0.0.1:27017/cinema", {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
